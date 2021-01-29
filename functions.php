@@ -1,4 +1,6 @@
 <?php
+require_once(get_theme_file_path("/inc/tgm.php"));
+
 if (site_url() == "http://localhost/philosophy"){
     define("VERSION", time());
 } else{
