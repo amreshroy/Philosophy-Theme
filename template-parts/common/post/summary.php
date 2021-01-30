@@ -12,7 +12,7 @@
     </div>
     <div class="entry__meta">
         <span class="entry__meta-links">
-           <?php get_the_tag_list();?>
+           <?php echo get_the_tag_list();?>
         </span>
     </div>
 </div>
