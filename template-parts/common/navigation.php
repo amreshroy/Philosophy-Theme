@@ -1,14 +1,19 @@
-    <a class="header__toggle-menu" href="#0" title="Menu"><span>
+    <a class="header__toggle-menu" href="#0" title="Menu">
+        <span>
         <?php _e("Menu", "philosophy"); ?>
-    </span></a>
+        </span>
+    </a>
         <nav class="header__nav-wrap">
             <h2 class="header__nav-heading h6"><?php _e("Site Navigation", "philosophy");?></h2>
             <?php
-            wp_nav_menu(array(
+            $philosophy_menu = wp_nav_menu(array(
                 'theme_location' => 'top-menu',
                 'menu_id'        => 'top-menu',
-                'menu_class'     => 'header__nav'
-            ))
+                'menu_class'     => 'header__nav',
+                'echo'           => false
+            ));
+            $philosophy_menu_children = str_replace("menu-item-has-children", "has-children", $philosophy_menu);
+            echo $philosophy_menu_children;
             ?>
             <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">
                 <?php _e("Close", "philosophy");?>
