@@ -32,3 +32,8 @@ function philosophy_theme_assets(){
     wp_enqueue_script("main-js", get_theme_file_uri("/assets/js/main.js"), array("jquery"), "1.0", true );
 }
 add_action("wp_enqueue_scripts", "philosophy_theme_assets");
+
+function custom_excerpt_length( $length ) {
+    return 10;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
