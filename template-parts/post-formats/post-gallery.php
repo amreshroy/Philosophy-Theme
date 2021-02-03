@@ -1,21 +1,27 @@
 <article class="masonry__brick entry format-gallery" data-aos="fade-up">
-                        
+
+    <?php
+    if(class_exists("Attachments")):
+        $attachments = new Attachments("Gallery");
+        if( $attachments->exist()):
+    ?>                   
     <div class="entry__thumb slider">
         <div class="slider__slides">
+        <?php
+            while( $attachment = $attachments->get()):
+        ?>
             <div class="slider__slide">
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-1-400.jpg" 
-                        srcset="<?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-1-400.jpg 1x, <?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-1-800.jpg 2x" alt=""> 
+                <?php echo $attachments->image("philosophy_home_square"); ?>
             </div>
-            <div class="slider__slide">
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-2-400.jpg" 
-                        srcset="<?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-2-400.jpg 1x, <?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-2-800.jpg 2x" alt=""> 
-            </div>
-            <div class="slider__slide">
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-3-400.jpg" 
-                        srcset="<?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-3-400.jpg 1x, <?php echo get_template_directory_uri();?>/assets/images/thumbs/masonry/gallery/gallery-3-800.jpg 2x" alt="">  
-            </div>
+        <?php
+           endwhile;
+        ?>
         </div>
     </div>
+    <?php
+        endif;
+    endif;
+    ?>
 
     <?php get_template_part("template-parts/common/post/summary"); ?>
 
