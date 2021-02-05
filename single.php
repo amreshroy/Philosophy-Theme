@@ -44,7 +44,8 @@ get_header();
 
                     <div class="s-content__author-about">
                         <h4 class="s-content__author-name">
-                            <a href="#0"><?php the_author(); ?></a>
+                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta("ID"))); ?>">
+                            <?php the_author(); ?></a>
                         </h4>
                     
                         <p><?php the_author_meta("description"); ?></p>
