@@ -17,6 +17,7 @@ function philosophy_theme_setup(){
 
     register_nav_menu("top-menu", __("Top Menu", "philosophy"));
     add_image_size("philosophy_home_square", 400, 400, true);
+    add_image_size( "single_post", 1024, 550, true);
 }
 add_action("after_setup_theme", "philosophy_theme_setup");
 
