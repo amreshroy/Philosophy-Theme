@@ -2,7 +2,15 @@
     <!-- s-content
     ================================================== -->
     <section class="s-content">
-        
+
+        <div class="row narrow">
+            <div class="col-full s-content__header" data-aos="fade-up">
+                <h1><?php single_cat_title(); ?></h1>
+
+                <p class="lead"><?php echo category_description(); ?></p>
+            </div>
+        </div>
+
         <div class="row masonry-wrap">
             <div class="masonry">
 
