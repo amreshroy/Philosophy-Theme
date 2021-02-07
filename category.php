@@ -19,7 +19,13 @@
             <div class="masonry">
 
                 <div class="grid-sizer"></div>
-
+                <?php
+                if(!have_posts()):
+                    ?>
+                    <h5 class="text-center"><?php _e("There is no posts in this category", "philosophy"); ?></h5>
+                <?php
+                endif;
+                ?>
                 <?php 
                 while (have_posts()){
                     the_post();
