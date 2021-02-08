@@ -69,5 +69,25 @@ function philosophy_about_sidebar() {
         'before_title'  => '<h3 class="quarter-top-margin">',
         'after_title'   => '</h3>',
     ) );
+    
+    register_sidebar( array(
+        'name'          => __( 'Contact Google Maps', 'philosophy' ),
+        'id'            => 'contact-google-maps',
+        'description'   => __( 'Widgets in this area will be shown on contact pages.', 'philosophy' ),
+        'before_widget' => '<div id="map-container %1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Contact Page Sidebar', 'philosophy' ),
+        'id'            => 'contact-page-sidebar',
+        'description'   => __( 'Widgets in this area will be shown on contact pages.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="col-block %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="quarter-top-margin">',
+        'after_title'   => '</h3>',
+    ) );
 }
 add_action( 'widgets_init', 'philosophy_about_sidebar' );
