@@ -29,7 +29,7 @@
             <div class="header__content row">
 
                 <div class="header__logo">
-                    <a class="logo" href="index.html">
+                    <a class="logo" href="<?php echo get_home_url(); ?>">
                         <img src="<?php echo get_template_directory_uri();?>/assets/images/logo.svg" alt="Homepage">
                     </a>
                 </div> <!-- end header__logo -->
