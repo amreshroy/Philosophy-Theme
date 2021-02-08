@@ -27,7 +27,13 @@ get_header();
 
                 <?php the_content(); ?>
 
-                
+                <div class ="row block-1-2 block-tab-full">
+                    <?php if ( is_active_sidebar( 'about-page-sidebar' ) ) { ?>
+                            <?php dynamic_sidebar('about-page-sidebar'); ?>
+                    <?php 
+                     } 
+                    ?>
+                </div>
 
             </div> <!-- end s-content__main -->
 

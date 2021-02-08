@@ -58,3 +58,16 @@ function philosophy_pagination(){
 }
 
 remove_action("term_description", "wpautop");
+
+function philosophy_about_sidebar() {
+    register_sidebar( array(
+        'name'          => __( 'About Page Sidebar', 'philosophy' ),
+        'id'            => 'about-page-sidebar',
+        'description'   => __( 'Widgets in this area will be shown on about pages.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="col-block %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="quarter-top-margin">',
+        'after_title'   => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'philosophy_about_sidebar' );
