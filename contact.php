@@ -43,6 +43,16 @@ get_header();
 
             </div> <!-- end s-content__main -->
 
+            <h3><?php echo _e("Says Hello", "philosophy"); ?></h3>
+
+            <div>
+                <?php
+                if(get_field("contact_form_shortcode")){
+                    echo do_shortcode(get_field("contact_form_shortcode"));
+                }
+                ?>
+            </div>
+
         </article>
 
    <?php
