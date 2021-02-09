@@ -36,6 +36,7 @@
     
     <div class="col-four md-six tab-full about">
         <?php
+        
         if(is_active_sidebar("before-footer-right-sidebar")){
             dynamic_sidebar("before-footer-right-sidebar");
         }
