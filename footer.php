@@ -36,7 +36,7 @@
     
     <div class="col-four md-six tab-full about">
         <?php
-        
+
         if(is_active_sidebar("before-footer-right-sidebar")){
             dynamic_sidebar("before-footer-right-sidebar");
         }
@@ -72,14 +72,13 @@
                 
             <h4>Quick Links</h4>
 
-            <ul class="s-footer__linklist">
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">Blog</a></li>
-                <li><a href="#0">Styles</a></li>
-                <li><a href="#0">About</a></li>
-                <li><a href="#0">Contact</a></li>
-                <li><a href="#0">Privacy Policy</a></li>
-            </ul>
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer-left-menu',
+                    'menu_id'        => 'footer-left-menu',
+                    'menu_class'     => 's-footer__linklist',
+                ));
+            ?>
 
         </div> <!-- end s-footer__sitelinks -->
 
@@ -87,14 +86,13 @@
                 
             <h4>Archives</h4>
 
-            <ul class="s-footer__linklist">
-                <li><a href="#0">January 2018</a></li>
-                <li><a href="#0">December 2017</a></li>
-                <li><a href="#0">November 2017</a></li>
-                <li><a href="#0">October 2017</a></li>
-                <li><a href="#0">September 2017</a></li>
-                <li><a href="#0">August 2017</a></li>
-            </ul>
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer-middle-menu',
+                    'menu_id'        => 'footer-middle-menu',
+                    'menu_class'     => 's-footer__linklist',
+                ));
+            ?>
 
         </div> <!-- end s-footer__archives -->
 
@@ -102,14 +100,13 @@
                 
             <h4>Social</h4>
 
-            <ul class="s-footer__linklist">
-                <li><a href="#0">Facebook</a></li>
-                <li><a href="#0">Instagram</a></li>
-                <li><a href="#0">Twitter</a></li>
-                <li><a href="#0">Pinterest</a></li>
-                <li><a href="#0">Google+</a></li>
-                <li><a href="#0">LinkedIn</a></li>
-            </ul>
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer-right-menu',
+                    'menu_id'        => 'footer-right-menu',
+                    'menu_class'     => 's-footer__linklist',
+                ));
+            ?>
 
         </div> <!-- end s-footer__social -->
 

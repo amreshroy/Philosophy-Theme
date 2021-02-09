@@ -16,9 +16,16 @@ function philosophy_theme_setup(){
     add_theme_support("post-formats", array("image", "audio", "video", "gallery", "quote", "link"));
     add_theme_support("/assets/css/editor-style.css");
 
-    register_nav_menu("top-menu", __("Top Menu", "philosophy"));
     add_image_size("philosophy_home_square", 400, 400, true);
     add_image_size( "single_post", 1024, 550, true);
+
+    register_nav_menu("top-menu", __("Top Menu", "philosophy"));
+
+    register_nav_menus(array(
+        "footer-left-menu" => __("Footer Left Menu", "philosophy"),
+        "footer-middle-menu" => __("Footer Middle Menu", "philosophy"),
+        "footer-right-menu" => __("Footer Right Menu", "philosophy"),
+    ));
 }
 add_action("after_setup_theme", "philosophy_theme_setup");
 
