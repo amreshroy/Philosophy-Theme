@@ -35,7 +35,7 @@
                 </div> <!-- end header__logo -->
 
                 <ul class="header__social">
-                    <li>
+                    <!-- <li>
                         <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </li>
                     <li>
@@ -46,9 +46,13 @@
                     </li>
                     <li>
                         <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                    </li>
+                    </li> -->
                 </ul> <!-- end header__social -->
-
+                <?php
+                if(is_active_sidebar("header-social-link")){
+                    dynamic_sidebar("header-social-link");
+                }
+                ?>
                 <a class="header__search-trigger" href="#0"></a>
 
                 <div class="header__search">

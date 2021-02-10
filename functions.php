@@ -99,7 +99,7 @@ function philosophy_about_sidebar() {
     ) );
     
     register_sidebar( array(
-        'name'          => __( 'Before Footer Right', 'philosophy' ),
+        'name'          => __( 'Before Footer Right About', 'philosophy' ),
         'id'            => 'before-footer-right-sidebar',
         'description'   => __( 'Widgets in this area will be shown on before footer section.', 'philosophy' ),
         'before_widget' => '<div id="%1$s" class="%2$s">',
@@ -109,7 +109,7 @@ function philosophy_about_sidebar() {
     ) );
     
     register_sidebar( array(
-        'name'          => __( 'Footer Right', 'philosophy' ),
+        'name'          => __( 'Footer Right Newsletter', 'philosophy' ),
         'id'            => 'footer-right-sidebar',
         'description'   => __( 'Widgets in this area will be shown on footer section.', 'philosophy' ),
         'before_widget' => '<div id="%1$s" class="%2$s">',
@@ -119,10 +119,20 @@ function philosophy_about_sidebar() {
     ) );
     
     register_sidebar( array(
-        'name'          => __( 'Footer Bottom', 'philosophy' ),
+        'name'          => __( 'Footer Bottom Copyright', 'philosophy' ),
         'id'            => 'footer-bottom-sidebar',
         'description'   => __( 'Widgets in this area will be shown on footer section.', 'philosophy' ),
         'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    ) );
+    
+    register_sidebar( array(
+        'name'          => __( 'Header Social Link', 'philosophy' ),
+        'id'            => 'header-social-link',
+        'description'   => __( 'Widgets in this area will be shown on footer section.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="header__social %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',
