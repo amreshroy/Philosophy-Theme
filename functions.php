@@ -107,5 +107,25 @@ function philosophy_about_sidebar() {
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',
     ) );
+    
+    register_sidebar( array(
+        'name'          => __( 'Footer Right', 'philosophy' ),
+        'id'            => 'footer-right-sidebar',
+        'description'   => __( 'Widgets in this area will be shown on footer section.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ) );
+    
+    register_sidebar( array(
+        'name'          => __( 'Footer Bottom', 'philosophy' ),
+        'id'            => 'footer-bottom-sidebar',
+        'description'   => __( 'Widgets in this area will be shown on footer section.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    ) );
 }
 add_action( 'widgets_init', 'philosophy_about_sidebar' );

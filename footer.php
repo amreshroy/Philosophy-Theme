@@ -70,7 +70,7 @@
         
         <div class="col-two md-four mob-full s-footer__sitelinks">
                 
-            <h4>Quick Links</h4>
+            <h4><?php _e("Quick Links", "philosophy");?></h4>
 
             <?php
                 wp_nav_menu(array(
@@ -84,7 +84,7 @@
 
         <div class="col-two md-four mob-full s-footer__archives">
                 
-            <h4>Archives</h4>
+            <h4><?php _e("Archives", "philosophy");?></h4>
 
             <?php
                 wp_nav_menu(array(
@@ -98,7 +98,7 @@
 
         <div class="col-two md-four mob-full s-footer__social">
                 
-            <h4>Social</h4>
+            <h4><?php _e("Social", "philosophy");?></h4>
 
             <?php
                 wp_nav_menu(array(
@@ -112,9 +112,12 @@
 
         <div class="col-five md-full end s-footer__subscribe">
                 
-            <h4>Our Newsletter</h4>
+            <?php
 
-            <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
+                if(is_active_sidebar("footer-right-sidebar")){
+                    dynamic_sidebar("footer-right-sidebar");
+                }
+            ?>
 
             <div class="subscribe-form">
                 <form id="mc-form" class="group" novalidate="true">
@@ -137,8 +140,11 @@
     <div class="row">
         <div class="col-full">
             <div class="s-footer__copyright">
-                <span>© Copyright Philosophy 2018</span> 
-                <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+            <?php
+                if(is_active_sidebar("footer-bottom-sidebar")){
+                    dynamic_sidebar("footer-bottom-sidebar");
+                }
+            ?>
             </div>
 
             <div class="go-top">
