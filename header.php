@@ -29,9 +29,16 @@
             <div class="header__content row">
 
                 <div class="header__logo">
-                    <a class="logo" href="<?php echo get_home_url(); ?>">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/logo.svg" alt="Homepage">
+                    
+                    <a class="logo" href="<?php get_home_url("/"); ?>">
+                    <?php if(has_custom_logo()){
+                        the_custom_logo();
+                    } else { 
+                        echo "<h2>".bloginfo('name')."</h2>";
+                    } 
+                    ?>
                     </a>
+
                 </div> <!-- end header__logo -->
 
                 <ul class="header__social">
