@@ -14,7 +14,7 @@ Text Domain: philosophy
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
     width: 100%!important;
 }
-.header__logo{
+.header__logo a{
     margin: 0px;
     color: #fff;
     font-weight: bold;

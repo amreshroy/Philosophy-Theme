@@ -13,8 +13,10 @@ while($philosophy_fp->have_posts()){
     $post_data[] = array(
         "title" => get_the_title(),
         "date" => get_the_date(),
+        "permalink" => get_permalink(),
         "thumbnail" => get_the_post_thumbnail_url(get_the_ID(), "large"),
         "author" => get_the_author_meta('display_name'),
+        "author_url" => get_author_posts_url(get_the_author_meta('ID')),
         "author_avatar" => get_avatar_url(get_the_author_meta("ID")),
         "cat"           => $categories[mt_rand(0, count($categories)-1)]->name
     );
@@ -33,7 +35,7 @@ if($philosophy_fp->post_count > 1):
                         <span class="entry__category"><a href="#0"><?php echo esc_html($post_data[0]["cat"]); ?></a></span>
 
                         <h1>
-                            <a href="#0" title="">
+                            <a href="<?php echo esc_url($post_data[0]["permalink"]); ?>" title="">
                                 <?php echo esc_html($post_data[0]["title"]); ?>
                             </a>
                         </h1>
@@ -63,7 +65,7 @@ if($philosophy_fp->post_count > 1):
                         <span class="entry__category"><a href="#0"><?php echo esc_html($post_data[$i]["cat"]); ?></a></span>
 
                         <h1>
-                            <a href="#0" title="">
+                            <a href="<?php echo esc_url($post_data[$i]["permalink"]); ?>" title="">
                                 <?php echo esc_html($post_data[$i]["title"]); ?>
                             </a>
                         </h1>
