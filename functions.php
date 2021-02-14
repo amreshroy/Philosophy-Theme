@@ -45,11 +45,6 @@ function philosophy_theme_assets(){
 }
 add_action("wp_enqueue_scripts", "philosophy_theme_assets");
 
-function custom_excerpt_length( $length ) {
-    return 10;
-}
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
 function philosophy_pagination(){
     global $wp_query;
     $links = paginate_links(array(
