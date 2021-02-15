@@ -37,14 +37,14 @@ if($philosophy_fp->post_count > 1):
                         <span class="entry__category"><a href="<?php echo esc_html($post_data[0]["cat_link"]); ?>"><?php echo esc_html($post_data[0]["cat"]); ?></a></span>
 
                         <h1>
-                            <a href="<?php echo esc_url($post_data[0]["permalink"]); ?>" title="">
+                            <a href="<?php echo esc_url($post_data[0]["permalink"]); ?>" title="<?php echo esc_html($post_data[0]["title"]); ?>">
                                 <?php echo esc_html($post_data[0]["title"]); ?>
                             </a>
                         </h1>
 
                         <div class="entry__info">
                             <a href="<?php echo esc_url($post_data[0]["author_url"]); ?>" class="entry__profile-pic">
-                                <img class="avatar" src="<?php echo esc_url($post_data[0]["author_avatar"]);?>" alt="">
+                                <img class="avatar" src="<?php echo esc_url($post_data[0]["author_avatar"]);?>" alt="<?php echo esc_attr($post_data[0]["author"]);?>">
                             </a>
 
                             <ul class="entry__meta">
@@ -67,14 +67,14 @@ if($philosophy_fp->post_count > 1):
                         <span class="entry__category"><a href="<?php echo esc_html($post_data[$i]["cat_link"]); ?>"><?php echo esc_html($post_data[$i]["cat"]); ?></a></span>
 
                         <h1>
-                            <a href="<?php echo esc_url($post_data[$i]["permalink"]); ?>" title="">
+                            <a href="<?php echo esc_url($post_data[$i]["permalink"]); ?>" title="<?php echo esc_html($post_data[$i]["title"]); ?>">
                                 <?php echo esc_html($post_data[$i]["title"]); ?>
                             </a>
                         </h1>
 
                         <div class="entry__info">
                             <a href="<?php echo esc_url($post_data[$i]["author_url"]); ?>" class="entry__profile-pic">
-                                <img class="avatar" src="<?php echo esc_url($post_data[$i]["author_avatar"]);?>" alt="">
+                                <img class="avatar" src="<?php echo esc_url($post_data[$i]["author_avatar"]);?>" alt="<?php echo esc_attr($post_data[0]["author"]);?>">
                             </a>
 
                             <ul class="entry__meta">

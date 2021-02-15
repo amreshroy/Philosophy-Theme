@@ -7,10 +7,10 @@
                         <?php 
                         $philosophy_cn = get_comments_number();
                         if($philosophy_cn<=1){
-                            echo $philosophy_cn." ".__("comment", "philosophy");
+                            echo esc_html($philosophy_cn) ." ".__("comment", "philosophy");
                         }
                         else{
-                            echo $philosophy_cn." ".__("comments", "philosophy");
+                            echo esc_html($philosophy_cn) ." ".__("comments", "philosophy");
                         }
                         ?>
                     </h3>
