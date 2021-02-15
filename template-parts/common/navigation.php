@@ -13,7 +13,7 @@
                 'echo'           => false
             ));
             $philosophy_menu_children = str_replace("menu-item-has-children", "has-children", $philosophy_menu);
-            echo $philosophy_menu_children;
+                echo wp_kses_post($philosophy_menu_children);
             ?>
             <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">
                 <?php _e("Close", "philosophy");?>
