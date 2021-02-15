@@ -58,7 +58,7 @@ function philosophy_pagination(){
     $links = str_replace("<ul class='pgn__num'>", "<ul>", $links);
     $links = str_replace("prev pgn__num", "pgn__prev", $links);
     $links = str_replace("next pgn__num", "pgn__next", $links);
-    echo $links;
+    echo wp_kses_post($links);
 }
 
 remove_action("term_description", "wpautop");
