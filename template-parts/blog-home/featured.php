@@ -48,7 +48,7 @@ if($philosophy_fp->post_count > 1):
                             </a>
 
                             <ul class="entry__meta">
-                                <li><a href="<?php echo esc_url($post_data[0]["author_url"]); ?>"><?php echo esc_html($post_data[0]["author"]);?></a></li>
+                                <li><a class="bypostauthor" href="<?php echo esc_url($post_data[0]["author_url"]); ?>"><?php echo esc_html($post_data[0]["author"]);?></a></li>
                                 <li><?php echo esc_html($post_data[0]["date"]);?></li>
                             </ul>
                         </div>
@@ -78,7 +78,7 @@ if($philosophy_fp->post_count > 1):
                             </a>
 
                             <ul class="entry__meta">
-                                <li><a href="<?php echo esc_url($post_data[$i]["author_url"]); ?>"><?php echo esc_html($post_data[$i]["author"]);?></a></li>
+                                <li><a class="bypostauthor" href="<?php echo esc_url($post_data[$i]["author_url"]); ?>"><?php echo esc_html($post_data[$i]["author"]);?></a></li>
                                 <li><?php echo esc_html($post_data[0]["date"]);?></li>
                             </ul>
                         </div>

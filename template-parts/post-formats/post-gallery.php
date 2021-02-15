@@ -11,7 +11,7 @@
             while( $attachment = $attachments->get()):
         ?>
             <div class="slider__slide">
-                <?php echo $attachments->image("philosophy_home_square"); ?>
+                <?php echo wp_kses_post($attachments->image("philosophy_home_square")); ?>
             </div>
         <?php
            endwhile;

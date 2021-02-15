@@ -1,6 +1,6 @@
 <?php
 
-class LwhhSocialIcons_Widget extends WP_Widget {
+class Lwhh_Social_Icons_Widget extends WP_Widget {
 
     /**
      * Register widget with WordPress.
@@ -164,7 +164,7 @@ class LwhhSocialIcons_Widget extends WP_Widget {
 } // class Foo_Widget
 
 function lwhh_social_icons_widget() {
-    register_widget( 'LwhhSocialIcons_Widget' );
+    register_widget( 'Lwhh_Social_Icons_Widget' );
 }
 
 add_action( 'widgets_init', 'lwhh_social_icons_widget' );

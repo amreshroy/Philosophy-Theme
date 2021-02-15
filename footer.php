@@ -26,10 +26,10 @@
                         <span class="popular__date"><span><?php echo _e("On", "philosophy");?></span> <time datetime="2017-12-19"><?php echo get_the_date();?></time></span>
                     </section>
                 </article>
-            <?php
+                <?php
                 }
                 wp_reset_query();
-            ?>
+                ?>
             
         </div> <!-- end popular_posts -->
     </div> <!-- end popular -->
@@ -52,7 +52,7 @@
 
         <div class="tagcloud">
 
-            <?php the_tags(" "," "," "); ?>
+            <?php wp_tag_cloud(); ?>
 
         </div> <!-- end tagcloud -->
     </div> <!-- end tags -->
