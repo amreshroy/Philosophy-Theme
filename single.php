@@ -29,7 +29,10 @@ get_header();
 
             <div class="col-full s-content__main">
 
-                <?php the_content(); ?>
+                <?php 
+                    the_content();
+                    wp_link_pages();
+                ?>
 
                 <p class="s-content__tags">
                     <span>Post Tags</span>
@@ -99,12 +102,8 @@ get_header();
                         </div>
                     </div>
                 </div> <!-- end s-content__pagenav -->
-
             </div> <!-- end s-content__main -->
-
         </article>
-
-
         <!-- comments
         ================================================== -->
         <?php 
@@ -112,7 +111,6 @@ get_header();
             comments_template();
         }
         ?>
-
     </section> <!-- s-content -->
 
 

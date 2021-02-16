@@ -1,4 +1,4 @@
-<article class="masonry__brick entry format-gallery" data-aos="fade-up">
+<article <?php post_class('masonry__brick entry format-gallery'); ?> data-aos="fade-up">
 
     <?php
     if(class_exists("Attachments")):

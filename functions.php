@@ -43,6 +43,11 @@ function philosophy_theme_assets(){
     wp_enqueue_script("modernizr-js", get_theme_file_uri("/assets/js/modernizr.js"), null, "1.0" );
     wp_enqueue_script("pace-js", get_theme_file_uri("/assets/js/pace.min.js"), null, "1.0" );
     wp_enqueue_script("plugin-js", get_theme_file_uri("/assets/js/plugins.js"), array("jquery"), "1.0", true );
+    
+    if ( is_singular() ){
+        wp_enqueue_script( "comment-reply" );
+    }
+    
     wp_enqueue_script("main-js", get_theme_file_uri("/assets/js/main.js"), array("jquery"), "1.0", true );
 }
 add_action("wp_enqueue_scripts", "philosophy_theme_assets");
