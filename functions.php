@@ -18,7 +18,8 @@ function philosophy_theme_setup(){
     add_theme_support("html5", array("search-form", "comment-list"));
     add_theme_support("post-formats", array("image", "audio", "video", "gallery", "quote", "link"));
     add_theme_support("/assets/css/editor-style.css");
-
+    add_theme_support("automatic-feed-links");
+    
     add_image_size("philosophy_home_square", 400, 400, true);
     add_image_size( "single_post", 1024, 550, true);
 
@@ -47,7 +48,7 @@ function philosophy_theme_assets(){
     if ( is_singular() ){
         wp_enqueue_script( "comment-reply" );
     }
-    
+
     wp_enqueue_script("main-js", get_theme_file_uri("/assets/js/main.js"), array("jquery"), "1.0", true );
 }
 add_action("wp_enqueue_scripts", "philosophy_theme_assets");
