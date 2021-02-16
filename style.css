@@ -26,10 +26,17 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     border-top: 1px solid rgba(255, 255, 255, 0.04);
     padding-top: 0px;
  }
-footer{
-    color: #f8f8f8e8;
+footer {
+    padding-top: 10.2rem;
+    padding-bottom: 6rem;
+    font-size: 1.5rem;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.4);
+    background: #000000db!important;
 }
-
+body{
+    background: inherit;
+}
 
  /* =WordPress Core
 -------------------------------------------------------------- */
