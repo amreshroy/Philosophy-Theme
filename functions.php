@@ -175,3 +175,13 @@ function after_category_description(){
     echo "<p>After Description</p>";
 }
 add_action("philosophy_after_category_description", "after_category_description");
+
+function beginning_category_page($category_title){
+    if("New" == $category_title){
+        $visit_count = get_option("category_new");
+        $visit_count = $visit_count?$visit_count:0;
+        $visit_count++;
+        update_option("category_new",$visit_count);
+    }
+}
+add_action("philosophy_category_page", "beginning_category_page");
