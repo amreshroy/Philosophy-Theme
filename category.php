@@ -1,3 +1,4 @@
+<?php do_action("philosophy_category_title", single_cat_title('',false)); ?>
 <?php get_header();?>
     <!-- s-content
     ================================================== -->
@@ -5,13 +6,17 @@
 
         <div class="row narrow">
             <div class="col-full s-content__header" data-aos="fade-up">
+            <?php do_action("philosophy_before_category_title"); ?>
                 <h1>
                     Category: <?php single_cat_title(); ?>
                 </h1>
+            <?php do_action("philosophy_after_category_title"); ?>
 
+            <?php do_action("philosophy_before_category_description"); ?>
                 <p class="lead">
                     <?php echo category_description(); ?>
                 </p>
+            <?php do_action("philosophy_after_category_description"); ?>
             </div>
         </div>
 
