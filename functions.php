@@ -190,3 +190,8 @@ function beginning_category_page($category_title){
     }
 }
 add_action("philosophy_category_page", "beginning_category_page");
+
+function filter_text($text){
+    return strtoupper($text);
+}
+add_filter("filter_text", "filter_text");
