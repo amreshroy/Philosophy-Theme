@@ -166,6 +166,11 @@ function before_category_title(){
 }
 add_action("philosophy_before_category_title", "before_category_title");
 
+function after_category_title(){
+    echo "<p>After Title</p>";
+}
+add_action("philosophy_after_category_title", "after_category_title");
+
 function before_category_description(){
     echo "<p>Before Description</p>";
 }
