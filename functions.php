@@ -191,11 +191,6 @@ function beginning_category_page($category_title){
 }
 add_action("philosophy_category_page", "beginning_category_page");
 
-function filter_text($text){
-    return strtoupper($text);
-}
-add_filter("filter_text", "filter_text");
-
 function philosophy_pagination_mid_size($size){
     return 3;
 }
@@ -211,7 +206,19 @@ function philosophy_home_banner_class($class_name){
 }
 add_filter("philosophy_home_banner_class", "philosophy_home_banner_class");
 
+function filter_text($text){
+    return strtoupper($text);
+}
+add_filter("filter_text", "filter_text");
+
 function filter_text_one_more($param1, $param2, $param3){
     return ucwords($param1)." ".strtoupper($param2)." ".ucwords($param3);
 }
 add_filter("filter_text_one_more", "filter_text_one_more",10, 3);
+
+remove_action("philosophy_before_category_title", "before_category_title");
+remove_action("philosophy_after_category_title", "after_category_title");
+remove_action("philosophy_before_category_description", "before_category_description");
+remove_action("philosophy_after_category_description", "after_category_description");
+remove_filter("filter_text", "filter_text");
+remove_filter("filter_text_one_more", "filter_text_one_more",10, 3);
