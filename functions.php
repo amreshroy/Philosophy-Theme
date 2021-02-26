@@ -200,3 +200,13 @@ function philosophy_pagination_mid_size($size){
     return 3;
 }
 add_filter("philosophy_pagination_mid_size", "philosophy_pagination_mid_size");
+
+function philosophy_home_banner_class($class_name){
+    if(is_home()){
+        return $class_name;
+    }
+    else{
+        return "";
+    }
+}
+add_filter("philosophy_home_banner_class", "philosophy_home_banner_class");
