@@ -210,3 +210,8 @@ function philosophy_home_banner_class($class_name){
     }
 }
 add_filter("philosophy_home_banner_class", "philosophy_home_banner_class");
+
+function filter_text_one_more($param1, $param2, $param3){
+    return ucwords($param1)." ".strtoupper($param2)." ".ucwords($param3);
+}
+add_filter("filter_text_one_more", "filter_text_one_more",10, 3);
