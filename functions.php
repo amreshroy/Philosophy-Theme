@@ -11,7 +11,7 @@ if (site_url() == "http://localhost/philosophy"){
     define("VERSION", wp_get_theme()->get("Version"));
 }
 function philosophy_theme_setup(){
-    load_theme_textdomain("philosophy");
+    load_theme_textdomain("philosophy", get_theme_file_path("/languages"));
     add_theme_support("post-thumbnails");
     add_theme_support("custom-logo");
     add_theme_support("title-tag");
@@ -211,14 +211,15 @@ function filter_text($text){
 }
 add_filter("filter_text", "filter_text");
 
-function filter_text_one_more($param1, $param2, $param3){
-    return ucwords($param1)." ".strtoupper($param2)." ".ucwords($param3);
+function filter_text_one_more($param1, $param2){
+    return ucwords($param1)." ".strtoupper($param2);
 }
-add_filter("filter_text_one_more", "filter_text_one_more",10, 3);
+add_filter("filter_text_one_more", "filter_text_one_more",10, 2);
 
 remove_action("philosophy_before_category_title", "before_category_title");
 remove_action("philosophy_after_category_title", "after_category_title");
 remove_action("philosophy_before_category_description", "before_category_description");
 remove_action("philosophy_after_category_description", "after_category_description");
 remove_filter("filter_text", "filter_text");
-remove_filter("filter_text_one_more", "filter_text_one_more",10, 3);
+
+remove_filter("filter_text_one_more", "filter_text_one_more",10, 2);

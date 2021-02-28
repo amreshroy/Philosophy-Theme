@@ -7,10 +7,10 @@
         <div class="row narrow">
             <div class="col-full s-content__header" data-aos="fade-up">
             <?php echo apply_filters("filter_text", "Filter Text"); ?>
-            <?php echo apply_filters("filter_text_one_more", "Filter Text 1", "filter text 2", "filter text 3"); ?>
+            <?php echo apply_filters("filter_text_one_more", "Filter Text 1", "filter text 2"); ?>
             <?php do_action("philosophy_before_category_title"); ?>
                 <h1>
-                    Category: <?php single_cat_title(); ?>
+                    <?php _e("Category", "philosophy"); ?> <?php single_cat_title(); ?>
                 </h1>
             <?php do_action("philosophy_after_category_title"); ?>
 
