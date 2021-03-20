@@ -151,11 +151,15 @@ function philosophy_search_form(){
     $post_type    = <<<PT
     <input type="hidden" name="post_type" value="post">
     PT;
-    if(is_post_type_archive('movie','book')){
+
+    //Search for Movies Archive Only
+    if(is_post_type_archive('movie')){
         $post_type    = <<<PT
         <input type="hidden" name="post_type" value="movie">
         PT;
     }
+
+    //Search for Books Archive Only
     if(is_post_type_archive('book')){
         $post_type    = <<<PT
         <input type="hidden" name="post_type" value="book">
