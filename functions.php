@@ -151,9 +151,14 @@ function philosophy_search_form(){
     $post_type    = <<<PT
     <input type="hidden" name="post_type" value="post">
     PT;
-    if(is_post_type_archive('movie')){
+    if(is_post_type_archive('movie','book')){
         $post_type    = <<<PT
         <input type="hidden" name="post_type" value="movie">
+        PT;
+    }
+    if(is_post_type_archive('book')){
+        $post_type    = <<<PT
+        <input type="hidden" name="post_type" value="book">
         PT;
     }
     $newform = <<<FORM
