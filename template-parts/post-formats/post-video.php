@@ -1,5 +1,5 @@
 <?php
-$philosophy_video_file = "";
+$philosophy_video_file = "https://www.youtube.com/watch?v=Fb2UyTqEKtM";
 if(function_exists("the_fields")){
     $philosophy_video_file = get_field("source_file");
 }
