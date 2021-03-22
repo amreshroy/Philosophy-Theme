@@ -24,6 +24,7 @@ Template Name: Featured Movies
                     $philosophy_movies->the_post();
                     get_template_part("/template-parts/post-formats/post", get_post_format());
                 }
+                wp_reset_query();
                 ?>
 
             </div> <!-- end masonry -->
