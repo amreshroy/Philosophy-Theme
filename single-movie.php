@@ -9,9 +9,8 @@ get_header();
         <article class="row format-standard">
 
             <div class="s-content__header col-full">
-            <h2 class="text-center"><?php _e("Movie Name:", "philosophy"); ?></h2>
                 <h1 class="s-content__header-title">
-                    <?php the_title();?>
+                <?php _e("Movie Name: ", "philosophy"); ?><?php the_title();?>
                 </h1>
                 <ul class="s-content__header-meta">
                     <li class="date"><?php echo get_the_date(); ?></li>
