@@ -241,3 +241,12 @@ remove_action("philosophy_after_category_description", "after_category_descripti
 remove_filter("filter_text", "filter_text");
 
 remove_filter("filter_text_one_more", "filter_text_one_more",10, 2);
+
+function philosophy_custom_link($post_link, $id){
+    $p = get_post($id);
+    if(is_object($p) && 'chapter'==get_post_type($id)){
+        $parent_post_id = the_field('parent book');
+        
+    }
+}
+add_filter('post_type_link', "philosophy_custom_link", 1, 3);
