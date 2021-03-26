@@ -242,11 +242,18 @@ remove_filter("filter_text", "filter_text");
 
 remove_filter("filter_text_one_more", "filter_text_one_more",10, 2);
 
+// Parent Child Relationship With Two Custom Post //
 function philosophy_custom_link($post_link, $id){
     $p = get_post($id);
     if(is_object($p) && 'chapter'==get_post_type($id)){
-        $parent_post_id = the_field('parent book');
-        
+        $parent_post_id = get_field('parent_book');
+        $parent_post = get_post($parent_post_id);
+        if($parent_post){
+            $post_link = str_replace("%book%",$parent_post->post_name,$post_link);
+        }
+        return $post_link;
+
     }
 }
-add_filter('post_type_link', "philosophy_custom_link", 1, 3);
+add_filter("post_type_link", "philosophy_custom_link", 1, 3);
+// Parent Child Relationship With Two Custom Post //
