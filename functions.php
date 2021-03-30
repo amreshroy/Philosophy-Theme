@@ -251,9 +251,8 @@ function philosophy_custom_link($post_link, $id){
         if($parent_post){
             $post_link = str_replace("%book%",$parent_post->post_name,$post_link);
         }
-        return $post_link;
-
     }
+    return $post_link;
 }
 add_filter("post_type_link", "philosophy_custom_link", 1, 3);
 // Parent Child Relationship With Two Custom Post //
