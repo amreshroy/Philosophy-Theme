@@ -11,10 +11,10 @@
  */
 function cmb2_attached_posts_field_metaboxes_example() {
 
-	// $post_id = 0;
-	//  if ( isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_ID'] ) ) {
-	// 	  $post_id = empty( $_REQUEST['post_ID'] ) ? $_REQUEST['post'] : $_REQUEST['post_ID'];
-	//   }
+	$post_id = 0;
+	 if ( isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_ID'] ) ) {
+		  $post_id = empty( $_REQUEST['post_ID'] ) ? $_REQUEST['post'] : $_REQUEST['post_ID'];
+	  }
 
 	$example_meta = new_cmb2_box( array(
 		'id'           => 'cmb2_attached_posts_field',
@@ -38,7 +38,7 @@ function cmb2_attached_posts_field_metaboxes_example() {
 				'posts_per_page' => -1,
 				'post_type'      => 'chapter',
 				'meta_key'		 => 'parent_book',
-				// 'meta_value'	 => $post_id
+				'meta_value'	 => $post_id
 			), // override the get_posts args
 		),
 	) );

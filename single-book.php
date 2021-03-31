@@ -50,6 +50,17 @@ get_header();
                         $philosophy_chapter_title = get_the_title();
                         printf("<a href='%s'>%s</a><br/>", $philosophy_chapter_link, $philosophy_chapter_title);
                     }
+                    wp_reset_query();
+
+                    echo "<h3>";
+                    _e('Chapter List', '$philosophy');
+                    echo "</h3>";
+                    $philosophy_CMB2_attached = get_post_meta( get_the_ID(), 'attached_cmb2_attached_posts', true );
+                    foreach($philosophy_CMB2_attached as $p_chapter){
+                        $philosophy_chapter_link = get_the_permalink($p_chapter);
+                        $philosophy_chapter_title = get_the_title($p_chapter);
+                        printf("<a href='%s'>%s</a><br/>", $philosophy_chapter_link, $philosophy_chapter_title);
+                    }
                 ?>
 
                 <p class="s-content__tags">
