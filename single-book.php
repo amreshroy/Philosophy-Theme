@@ -41,14 +41,14 @@ get_header();
                     );
 
                     $philosophy_chapters = new WP_Query($philosophy_chapter);
-                    echo "<h3>";
-                    _e('Chapter List', '$philosophy');
-                    echo "</h3>";
+                    // echo "<h3>";
+                    // _e('Chapter List', '$philosophy');
+                    // echo "</h3>";
                     while($philosophy_chapters->have_posts()){
                         $philosophy_chapters->the_post();
                         $philosophy_chapter_link = get_the_permalink();
                         $philosophy_chapter_title = get_the_title();
-                        printf("<a href='%s'>%s</a><br/>", $philosophy_chapter_link, $philosophy_chapter_title);
+                        //printf("<a href='%s'>%s</a><br/>", $philosophy_chapter_link, $philosophy_chapter_title);
                     }
                     wp_reset_query();
 
@@ -63,11 +63,20 @@ get_header();
                     }
                 ?>
 
-                <p class="s-content__tags">
+                <!-- <p class="s-content__tags">
                     <span>Post Tags</span>
 
                     <span class="s-content__tag-list">
-                        <?php the_tags(" ","",""); ?>
+                        <?php //the_tags(" ","",""); ?>
+                    </span>
+                </p>  -->
+                <!-- end s-content__tags -->
+
+                <p class="s-content__tags">
+                    <span><?php _e('Post Language', 'philosophy'); ?></span>
+
+                    <span class="s-content__tag-list">
+                        <?php the_terms(get_the_ID(),'language','','',''); ?>
                     </span>
                 </p> <!-- end s-content__tags -->
 
