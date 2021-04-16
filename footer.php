@@ -8,8 +8,8 @@
         <div class="block-1-2 block-m-full popular__posts">
             <?php
             $philosophy_popular_posts = new WP_Query(array(
-                'post_per_page'         => 6,
-                'ignore_sticky_post'    => 1,
+                'posts_per_page'         => 6,
+                'ignore_sticky_posts'    => 1,
                 'orderby'               => "comment_count"
             ));
             
@@ -29,7 +29,7 @@
                 <?php
                 }
                 wp_reset_query();
-                ?>
+            ?>
             
         </div> <!-- end popular_posts -->
     </div> <!-- end popular -->
@@ -48,7 +48,11 @@
 
 <div class="row bottom tags-wrap">
     <div class="col-full tags">
-        <h3>Tags</h3>
+        <?php
+        $philosophy_footer_tag_heading = apply_filters('$philosophy_footer_tag_heading', __('Tags', 'philosophy'));
+        $philosophy_footer_tag_items = apply_filters('$philosophy_footer_tag_items', get_tags());
+        ?>
+        <h3><?php echo esc_html($philosophy_footer_tag_heading); ?></h3>
 
         <div class="tagcloud">
 
@@ -70,7 +74,7 @@
         
         <div class="col-two md-four mob-full s-footer__sitelinks">
                 
-            <h4><?php _e("Quick Links", "philosophy");?></h4>
+            <h4><?php _e("Quick Links", "philosophy"); ?></h4>
 
             <?php
                 wp_nav_menu(array(

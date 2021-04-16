@@ -28,11 +28,11 @@
 
                 <div class="header__logo">
                     
-                    <a class="logo" href="<?php get_home_url("/"); ?>">
+                    <a class="logo" href="<?php echo get_home_url(); ?>">
                     <?php if(has_custom_logo()){
                         the_custom_logo();
                     } else { 
-                        echo "<h2>".bloginfo('name')."</h2>";
+                        echo "<h1>".bloginfo('name')."</h1>";
                     } 
                     ?>
                     </a>

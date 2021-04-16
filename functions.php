@@ -257,3 +257,11 @@ function philosophy_custom_link($post_link, $id){
 }
 add_filter("post_type_link", "philosophy_custom_link", 1, 3);
 // Parent Child Relationship With Two Custom Post //
+
+function philosophy_footer_language_heading($title){
+    if(is_post_type_archive('book')){
+        $title = __('Language', 'philosophy');
+    }
+    return $title;
+}
+add_filter('philosophy_footer_tag_heading', 'philosophy_footer_language_heading');
